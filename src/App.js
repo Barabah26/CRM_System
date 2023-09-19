@@ -1,37 +1,27 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { Routes } from 'react-router-dom'; // Додайте Routes та Route
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+// import { Routes } from 'react-router-dom'; // Додайте Routes та Route
 
-import Registration from './components/Registration';
 import Login from './components/Login';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from './components/Home';
 import DataTable from './components/DataTable';
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import DataTable from './components/DataTable';
 
 function App() {
+
+
+  
   return (
     <Router>
-      <div className="container">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <Link to="/registration" className="nav-link">Реєстрація</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/login" className="nav-link">Вхід</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/dataTable" className="nav-link">Тестова таблиця</Link>
-            </li>
-          </ul>
-        </nav>
-
-        <Routes>
-          <Route path="/dataTable" element={<DataTable />} />
-          <Route path="/registration" element={<Registration />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
-      </div>
+      <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/dataTable" element={<DataTable />} />
+      </Routes>
+      
     </Router>
+    
   );
 }
 

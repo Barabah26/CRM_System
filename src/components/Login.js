@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBar from './NavBar';
+
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -22,7 +24,13 @@ function Login() {
   };
 
   return (
-    <div className="container d-flex justify-content-center">
+   <>
+   <div className='container'>
+   <NavBar/>
+
+   
+   <div className="container d-flex justify-content-center">
+      
       <div className="FormStyle.container">
         <h2>Вхід</h2>
         <form onSubmit={handleSubmit}>
@@ -61,6 +69,11 @@ function Login() {
         </form>
       </div>
     </div>
+   </div>
+   
+   
+   </>
+    
   );
 }
 
