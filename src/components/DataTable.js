@@ -1,4 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { AppBar, Toolbar, Typography, Button, IconButton } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import Avatar from '@mui/material/Avatar';
+
+
 
 function DataTable() {
     const [data, setData] = useState([
@@ -32,35 +37,48 @@ function DataTable() {
     };
   
     return (
-      <div className="table-container">
-        <table className="table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Ім'я</th>
-              <th>Email</th>
-              <th>Виконано</th> {/* Новий стовпчик для чекбоксів */}
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((item) => (
-              <tr key={item.id}>
-                <td>{item.id}</td>
-                <td>{item.name}</td>
-                <td>{item.email}</td>
-                <td>
-                  {/* Чекбокс для встановлення галочки */}
-                  <input
-                    type="checkbox"
-                    checked={item.completed}
-                    onChange={() => handleCheckboxChange(item.id)}
-                  />
-                </td>
+        <div>
+          <div>
+            <AppBar position="static">
+              <Toolbar>
+                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                    Ім'я користувача 
+                </Typography>
+                <Avatar alt="" src="VIRT.png"/>
+                <Button color="inherit">Вихід</Button>
+              </Toolbar>
+            </AppBar>
+          </div>
+                <div className="table-container">
+          <table className="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Ім'я</th>
+                <th>Email</th>
+                <th>Виконано</th> {/* Новий стовпчик для чекбоксів */}
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              {data.map((item) => (
+                <tr key={item.id}>
+                  <td>{item.id}</td>
+                  <td>{item.name}</td>
+                  <td>{item.email}</td>
+                  <td>
+                    {/* Чекбокс для встановлення галочки */}
+                    <input
+                      type="checkbox"
+                      checked={item.completed}
+                      onChange={() => handleCheckboxChange(item.id)}
+                    />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+                </div>
+        </div>
     );
   }
   
