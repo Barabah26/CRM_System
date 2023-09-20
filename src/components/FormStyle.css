@@ -15,22 +15,27 @@ h2 {
   
 }
 
-/* Центрування форми */
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
 
 /* Обмеження ширини форми */
 .form-container {
-  width: 350px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.form {
+  border: 2px solid #ccc;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  max-width: 400px;
+  margin: 20px auto 0; /* Збільшений верхній відступ для форми */
 }
-.text-center {
-  text-align: center;
-  
+
+body {
+  background-color:  #e8e7e7;; /* Сірий колір фону */
+  /* Інші стилі для body */
 }
+
+
