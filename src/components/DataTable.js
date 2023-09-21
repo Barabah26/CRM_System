@@ -43,13 +43,12 @@ function DataTable() {
               <Toolbar>
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                     Ім'я користувача 
-                </Typography>
-                <Avatar alt="" src="VIRT.png"/>
+                </Typography>  
                 <Button color="inherit">Вихід</Button>
               </Toolbar>
             </AppBar>
           </div>
-                <div className="table-container">
+            <div className="table-container">
           <table className="table">
             <thead>
               <tr>
